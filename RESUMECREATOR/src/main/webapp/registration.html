@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            color:white;
+            background-color:black;
+        }
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+        label {
+            width: 150px;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+        input,textarea{
+            width: 250px;
+            padding:5px 5px 5px 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            margin-right:5px;
+            
+        }
+        .personal{padding:20px;}
+        fieldset{margin-left:300px;}
+        h1{margin-left:300px;}
+        button{margin-left:350px;padding:5px;}
+    </style>
+</head>
+<body>
+<form action="storing.jsp" onsubmit="fun12(event)">
+<h1>My Resume</h1>
+      <fieldset>
+      <div class="personal">
+            <label for="name" >Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="profession">Profession:</label>
+            <input type="text" id="profession" name="profession" required="true"> <br>  
+            <label for="summary">Summary:</label><br>
+            <textarea id="summary" name="summary" rows="8" columns="20" required="true"></textarea><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="phone">Phone No.:</label>
+            <input type="tel" id="phone" name="phone" required="true">   
+
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" required="true"><br>
+            <label for="linkedin" >LinkedIn:</label>   
+
+            <input type="url" id="linkedin" name="linkedin" placeholder="https://www.linkedin.com/in/your-profile" required="true">
+            <label for="github">GitHub:</label>
+            <input type="url" id="github" name="github" placeholder="https://github.com/your-username" required="true"><br>
+        </div>
+        <div class="education">
+        	<label for="schoolname" >School Name:</label>
+            <input type="text" id="schoolname" name="schoolname" required>
+            <label for="marksschool">Marks/CGPA:</label><input type="text" id="marksschool" name="marksschool"><br>
+            <label for="intername" >Inter/Diploma College Name:</label>
+            <input type="text" id="intername" name="intername" required>
+            <label for="marksinter">Marks/CGPA:</label><input type="text" id="marksinter" name="marksinter"><br>
+            <label for="engineeringname" >Engineering College Name:</label>
+            <input type="text" id="engineeringname" name="engineeringname" required>
+            <label for="marksengineering">Marks/CGPA:</label><input type="text" id="marksengineering" name="marksengineering"><br>
+        </div>
+        <div class="project">
+        	<label for="project1">Project1</label><input type="text" name="project1name" id="project1name" required>
+        	<label for="project2">Project2</label><input type="text" name="project2name" id="project2name" required><br>
+            <textarea id="pd1" name="pd1" rows="8" columns="20" placeholder="PROJECT1 DESCRIPTION" required="true"></textarea>
+            <textarea id="pd2" name="pd2" rows="8" columns="20" placeholder="PROJECT2 DESCRIPTION" required="true"></textarea>
+        </div>
+        <div class="skills">
+        	<label for="skills">Skills:</label><input type="text" name="skills" class="skills" placeholder="Enter Skills Seperated by #" required>
+        </div>
+        <lable for="password">Password:</label>
+ <br>
+ <input type="password" required="true" placeholder="Enter password" name="password1"
+id="password1" class="password1">
+ <br><br>
+ <lable for="reenterpassword">Re-type Password:</label>
+ <br>
+ <input type="password" required="true" placeholder="Enter password"
+name="reenterpassword" class="reenterpassword" id="reenterpassword">
+        <button type="submit">Resume</button>
+      </fieldset>
+      </form>
+      <script>
+      function fun12(event) {
+    	    const pass1 = document.querySelector(".password1");
+    	    const pass2 = document.querySelector(".reenterpassword");
+    	    if (pass1.value === pass2.value) {
+    	        document.querySelector("form").submit();
+    	    } else {
+    	        alert("Passwords do not match.");
+    	        pass1.value = "";
+    	        pass2.value = "";
+    	        pass2.value = "";
+    	        event.preventDefault(); // Prevent form submission
+    	    }
+      }
+      </script>  
+</body>
+</html>
